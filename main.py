@@ -1,56 +1,57 @@
-let zahl = 0
-input.onGesture(Gesture.Shake, function () {
-    basic.clearScreen()
+zahl = 0
+
+def on_gesture_shake():
+    global zahl
+    basic.clear_screen()
     zahl = randint(1, 6)
-    if (zahl == 1) {
-        basic.showLeds(`
+    if zahl == 1:
+        basic.show_leds("""
             . . . . .
             . . . . .
             . . # . .
             . . . . .
             . . . . .
-            `)
-    } else if (zahl == 2) {
-        basic.showLeds(`
+            """)
+    elif zahl == 2:
+        basic.show_leds("""
             . . . . .
             . . . . .
             # . . . #
             . . . . .
             . . . . .
-            `)
-    } else if (zahl == 3) {
-        basic.showLeds(`
+            """)
+    elif zahl == 3:
+        basic.show_leds("""
             . . . . #
             . . . . .
             . . # . .
             . . . . .
             # . . . .
-            `)
-    } else if (zahl == 4) {
-        basic.showLeds(`
+            """)
+    elif zahl == 4:
+        basic.show_leds("""
             # . . . #
             . . . . .
             . . . . .
             . . . . .
             # . . . #
-            `)
-    } else if (zahl == 5) {
-        basic.showLeds(`
+            """)
+    elif zahl == 5:
+        basic.show_leds("""
             # . . . #
             . . . . .
             . . # . .
             . . . . .
             # . . . #
-            `)
-    } else {
-        basic.showLeds(`
+            """)
+    else:
+        basic.show_leds("""
             # . . . #
             . . . . .
             # . . . #
             . . . . .
             # . . . #
-            `)
-    }
+            """)
     basic.pause(2000)
-    basic.clearScreen()
-})
+    basic.clear_screen()
+input.on_gesture(Gesture.SHAKE, on_gesture_shake)
